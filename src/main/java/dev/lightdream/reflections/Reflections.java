@@ -1,9 +1,7 @@
 package dev.lightdream.reflections;
 
-import dev.lightdream.logger.Logger;
 import lombok.NonNull;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
@@ -20,19 +18,15 @@ public class Reflections {
     }
 
     /**
-     * @param annotation  The annotation to search for
+     * @param annotation The annotation to search for
      * @return A set of classes that have the specified annotation
      */
     public @NonNull Set<Class<?>> getClassesAnnotatedWith(Class<? extends Annotation> annotation) {
-        return mapper
-                .getClasses()
-                .stream()
-                .filter(clazz -> clazz.isAnnotationPresent(annotation))
-                .collect(Collectors.toSet());
+        return mapper.getClasses().stream().filter(clazz -> clazz.isAnnotationPresent(annotation)).collect(Collectors.toSet());
     }
 
     /**
-     * @param annotation  The annotation to search for
+     * @param annotation The annotation to search for
      * @return A set of methods that have the specified annotation
      */
     public @NonNull Set<Method> getMethodsAnnotatedWith(Class<? extends Annotation> annotation) {
