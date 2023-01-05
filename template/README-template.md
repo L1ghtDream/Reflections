@@ -4,21 +4,19 @@
 ## Use
 
 <details>
-  <summary>Maven</summary>
+  <summary>Maven</summary><blockquote>
+  <details><summary>repo.lightdream.dev</summary>
 
-  <details>
-<summary style="padding-left:25px">repo.lightdream.dev</summary>
-
-  ```xml
+```xml
 <repositories>
     <repository>
         <id>lightdream-repo</id>
         <url>https://repo.lightdream.dev/</url>
     </repository>
 </repositories>
-  ```
+```
 
-  ```xml
+```xml
 <dependenies>
     <dependency>
         <groupId>${{ env.GROUP }}</groupId>
@@ -26,22 +24,22 @@
         <version>${{ env.VERSION }}</version>
     </dependency>
 </dependenies>
-  ```
+```
 
   </details>
-  <details>
-  <summary  style="padding-left:25px">jitpack.io</summary>
+    
+  <details><summary  style="padding-left:25px">jitpack.io</summary>
 
-  ```xml
+```xml
 <repositories>
     <repository>
         <id>jitpack.io</id>
         <url>https://jitpack.io</url>
     </repository>
 </repositories>
-  ```
+```
 
-  ```xml
+```xml
 <dependencies>
     <dependency>
         <groupId>com.github.${{ env.GITHUB_USERNAME }}</groupId>
@@ -50,21 +48,25 @@
     </dependency>
 </dependencies>
 ```
+    
+</blockquote></details>
 
+  
+  
+  
+  
+  
+  
+  
 
-
+  
 </details>
 
-</details>
+<details><summary>Gradle</summary><blockquote>
 
-<details>
-  <summary>Gradle</summary>
+  <details><summary>Groovy</summary><blockquote>
 
-  <details>
-    <summary  style="padding-left:25px">Groovy</summary>
-
-  <details>
-<summary  style="padding-left:50px">repo.lightdream.dev</summary>
+  <details><summary>repo.lightdream.dev</summary>
 
 ```groovy
 repositories {
@@ -74,12 +76,12 @@ repositories {
 
 ```groovy
 dependencies {
-    implementation=("${{ env.GROUP }}:${{ env.ARTIFACT }}:${{ env.VERSION }}")
+    implementation "${{ env.GROUP }}:${{ env.ARTIFACT }}:${{ env.VERSION }}"
 }
 ```
   </details>
-  <details>
-  <summary style="padding-left:50px">jitpack.io</summary>
+    
+  <details><summary>jitpack.io</summary>
 
 ```groovy
 repositories {
@@ -92,20 +94,14 @@ dependencies {
     implementation "com.github.${{ env.GITHUB_USERNAME }}:${{ env.ARTIFACT }}:${{ env.VERSION }}"
 }
 ```
-
-
-
-</details>
-
-
-
   </details>
+</blockquote></details>
 
   <details>
-    <summary style="padding-left:25px">Kotlin</summary>
+    <summary>Kotlin</summary><blockquote>
 
   <details>
-<summary style="padding-left:50px">repo.lightdream.dev</summary>
+<summary>repo.lightdream.dev</summary>
 
 ```groovy
 repositories {
@@ -115,7 +111,7 @@ repositories {
 
 ```groovy
 dependencies {
-    implementation "${{ env.GROUP }}:${{ env.ARTIFACT }}:${{ env.VERSION }}"
+    implementation("${{ env.GROUP }}:${{ env.ARTIFACT }}:${{ env.VERSION }}")
 }
 ```
   </details>
@@ -138,9 +134,9 @@ dependencies {
 
 </details>
 
-  </details>
+  </blockquote></details>
 
-</details>
+</blockquote></details>
 
 
 
