@@ -21,6 +21,10 @@ jobs:
       - name: Execute Gradle build
         run: ./gradlew build
 
+      - uses: actions/labeler@v4
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Set version env variable
         run: |
           echo "VERSION=$(./gradlew properties -q | grep "version:" | awk '{print $2}')" >> $GITHUB_ENV
