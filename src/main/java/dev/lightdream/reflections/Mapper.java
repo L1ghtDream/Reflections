@@ -63,4 +63,8 @@ public class Mapper {
         return classes;
     }
 
+    public Reflections createReflections(){
+        return new Reflections(this);
+    }
+
 }
