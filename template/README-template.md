@@ -6,26 +6,24 @@
 <details>
   <summary>Maven</summary>
 
-```xml
-
-<repositories>
-    <repository>
-        <id>lightdream-repo</id>
-        <url>https://repo.lightdream.dev/</url>
-    </repository>
-</repositories>
-```
-
-```xml
-
-<dependencies>
-    <dependency>
-        <groupId>${{ env.GROUP }}</groupId>
-        <artifactId>${{ env.ARTIFACT }}</artifactId>
-        <version>${{ env.VERSION }}</version>
-    </dependency>
-</dependencies>
-```
+  ```xml
+  <repositories>
+      <repository>
+          <id>lightdream-repo</id>
+          <url>https://repo.lightdream.dev/</url>
+      </repository>
+  </repositories>
+  ```
+  
+  ```xml
+  <dependencies>
+      <dependency>
+          <groupId>${{ env.GROUP }}</groupId>
+          <artifactId>${{ env.ARTIFACT }}</artifactId>
+          <version>${{ env.VERSION }}</version>
+      </dependency>
+  </dependencies>
+  ```
 </details>
 
 <details>
@@ -38,7 +36,9 @@
     repositories {
         maven { url "https://repo.lightdream.dev/" }
     }
+    ```
     
+    ```groovy
     dependencies {
         implementation "${{ env.GROUP }}:${{ env.ARTIFACT }}:${{ env.VERSION }}"
     }
@@ -52,7 +52,9 @@
     repositories {
         maven("https://repo.lightdream.dev/")
     }
+    ```
     
+    ```kotlin
     dependencies {
         implementation("${{ env.GROUP }}:${{ env.ARTIFACT }}:${{ env.VERSION }}")
     }
@@ -66,30 +68,23 @@
 <details>
   <summary>Maven (jitpack)</summary>
 
-```xml
-
-<repositories>
-    <repository>
-        <id>jitpack.io</id>
-        <url>https://jitpack.io</url>
-    </repository>
-</repositories>
-```
-
-```xml
-
-<dependencies>
-    <dependency>
-        <groupId>com.github.${{ env.GITHUB_USERNAME }}</groupId>
-        <artifactId>${{ env.ARTIFACT }}</artifactId>
-        <version>${{ env.VERSION }}</version>
-    </dependency>
-    <dependency>
-        <groupId>${{ env.GROUP }}</groupId>
-        <artifactId>${{ env.ARTIFACT }}</artifactId>
-        <version></version>
-    </dependency>
-</dependencies>
+  ```xml
+  <repositories>
+      <repository>
+          <id>jitpack.io</id>
+          <url>https://jitpack.io</url>
+      </repository>
+  </repositories>
+  ```
+  
+  ```xml
+  <dependencies>
+      <dependency>
+          <groupId>com.github.${{ env.GITHUB_USERNAME }}</groupId>
+          <artifactId>${{ env.ARTIFACT }}</artifactId>
+          <version>${{ env.VERSION }}</version>
+      </dependency>
+  </dependencies>
 ```
 </details>
 
@@ -102,9 +97,11 @@
     repositories {
         maven { url "https://jitpack.io" }
     }
+    ```
     
+    ```groovy
     dependencies {
-    i   mplementation "com.github.${{ env.GITHUB_USERNAME }}:${{ env.ARTIFACT }}:${{ env.VERSION }}"
+        implementation "com.github.${{ env.GITHUB_USERNAME }}:${{ env.ARTIFACT }}:${{ env.VERSION }}"
     }
     ```
   </details>
@@ -116,7 +113,9 @@
     repositories {
         maven("https://jitpack.io")
     }
+    ```
     
+    ```kotlin
     dependencies {
         implementation("com.github.${{ env.GITHUB_USERNAME }}:${{ env.ARTIFACT }}:${{ env.VERSION }})
     }
