@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "dev.lightdream"
-version = "0.0.1"
+version = "0.0.12"
 
 repositories {
     mavenCentral()
@@ -13,7 +13,8 @@ repositories {
 
 dependencies {
     //LightDream
-    implementation("dev.lightdream:Logger:3.0.1")
+    implementation("dev.lightdream:Logger:+")
+    implementation("dev.lightdream:Lambda:+")
 
     // ClassGraph
     implementation("io.github.classgraph:classgraph:4.8.154")
@@ -26,8 +27,12 @@ dependencies {
     implementation("org.jetbrains:annotations:22.0.0")
 }
 
-tasks.getByName<Test>("test") {
-    useJUnitPlatform()
+java {
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+configurations.all {
+    resolutionStrategy.cacheDynamicVersionsFor(10, "seconds")
 }
 
 publishing {
@@ -37,10 +42,24 @@ publishing {
         }
     }
     repositories {
-        maven(url = project.findProperty("gitlab.url") as String) {
-            credentials(HttpHeaderCredentials::class){
-                name = project.findProperty("gitlab.auth.header.name") as String
-                value = project.findProperty("gitlab.auth.header.value") as String
+        var gitlabURL = project.findProperty("gitlab.url")
+        var gitlabHeaderName = project.findProperty("gitlab.url")
+        var gitlabHeaderValue = project.findProperty("gitlab.url")
+
+        if (gitlabURL == null) {
+            gitlabURL = ""
+        }
+        if (gitlabHeaderName == null) {
+            gitlabHeaderName = ""
+        }
+        if (gitlabHeaderValue == null) {
+            gitlabHeaderValue = ""
+        }
+
+        maven(url = gitlabURL as String) {
+            credentials(HttpHeaderCredentials::class) {
+                name = gitlabHeaderName as String
+                value = gitlabHeaderValue as String
             }
             authentication {
                 create<HttpHeaderAuthentication>("header")

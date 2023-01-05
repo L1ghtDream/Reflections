@@ -1,0 +1,50 @@
+name: Build
+
+on: [ push ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup codebase
+        uses: actions/checkout@v2
+
+      - name: Setup Java
+        uses: actions/setup-java@v2
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Change Gradle permissions
+        run: chmod u+x ./gradlew
+
+      - name: Execute Gradle build
+        run: ./gradlew build
+
+      - name: Set version env variable
+        run: |
+          echo "VERSION=$(./gradlew properties -q | grep "version:" | awk '{print $2}')" >> $GITHUB_ENV
+          echo "ARTIFACT=$(./gradlew properties -q | grep "name:" | awk '{print $2}')" >> $GITHUB_ENV
+
+      - name: Automatic Releases
+        uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "${{ env.VERSION }}"
+          prerelease: false
+          title: "${{ env.VERSION }}"
+          files: |
+            target/*.jar
+
+      - name: "README.md Render"
+        uses: varunsridharan/action-dynamic-readme@main
+        with:
+          committer_name: "Radu Voinea"
+          committer_email: "contact@voienaradu.com"
+          commit_message: "Updated README.md versions"
+          files: |
+            README-template.md=README.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ env.VERSION }}
+          ARTIFACT: ${{ env.ARTIFACT }}
