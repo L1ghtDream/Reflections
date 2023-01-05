@@ -7,7 +7,7 @@
   <summary>Maven</summary>
 
   <details>
-<summary>&ensp; repo.lightdream.dev</summary>
+<summary style="padding-left:25px">repo.lightdream.dev</summary>
 
   ```xml
 <repositories>
@@ -30,7 +30,7 @@
 
   </details>
   <details>
-  <summary>&ensp; jitpack.io</summary>
+  <summary  style="padding-left:25px">jitpack.io</summary>
 
   ```xml
 <repositories>
@@ -63,10 +63,10 @@
   <summary>Gradle</summary>
 
   <details>
-    <summary>&ensp;Groovy</summary>
+    <summary  style="padding-left:25px">Groovy</summary>
 
   <details>
-<summary>&ensp;&ensp; repo.lightdream.dev</summary>
+<summary  style="padding-left:50px">repo.lightdream.dev</summary>
 
 ```groovy
 repositories {
@@ -81,7 +81,7 @@ dependencies {
 ```
   </details>
   <details>
-  <summary>&ensp;&ensp; jitpack.io</summary>
+  <summary style="padding-left:50px">jitpack.io</summary>
 
 ```groovy
 repositories {
@@ -104,10 +104,10 @@ dependencies {
   </details>
 
   <details>
-    <summary>&ensp;Kotlin</summary>
+    <summary style="padding-left:25px">Kotlin</summary>
 
   <details>
-<summary>&ensp;&ensp; repo.lightdream.dev</summary>
+<summary style="padding-left:50px">repo.lightdream.dev</summary>
 
 ```groovy
 repositories {
@@ -122,7 +122,7 @@ dependencies {
 ```
   </details>
   <details>
-  <summary>&ensp;&ensp; jitpack.io</summary>
+  <summary style="padding-left:50px">jitpack.io</summary>
 
 ```kotlin
 repositories {
@@ -132,7 +132,7 @@ repositories {
 
 ```kotlin
 dependencies {
-    implementation("com.github.${{ env.GITHUB_USERNAME }}:${{ env.ARTIFACT }}:${{ env.VERSION }})
+    implementation("com.github.${{ env.GITHUB_USERNAME }}:${{ env.ARTIFACT }}:${{ env.VERSION }}")
 }
 ```
 
