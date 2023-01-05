@@ -33,13 +33,96 @@
 <details>
   <summary>Gradle</summary>
 
-```groovy
-repositories {
-    maven { url "https://repo.lightdream.dev/" }
-}
+  <details>
+    <summary>Groovy</summary>
 
-dependencies {
-    implementation "${{ env.GROUP }}:${{ env.ARTIFACT }}:${{ env.VERSION }}"
-}
+    ```groovy
+    repositories {
+        maven { url "https://repo.lightdream.dev/" }
+    }
+    
+    dependencies {
+        implementation "${{ env.GROUP }}:${{ env.ARTIFACT }}:${{ env.VERSION }}"
+    }
+    ```
+  </details>
+
+  <details>
+    <summary>Kotlin</summary>
+
+    ```kotlin
+    repositories {
+        maven("https://repo.lightdream.dev/")
+    }
+    
+    dependencies {
+        implementation("${{ env.GROUP }}:${{ env.ARTIFACT }}:${{ env.VERSION }}")
+    }
+    ```
+  </details>
+
+</details>
+
+
+
+<details>
+  <summary>Maven (jitpack)</summary>
+
+```xml
+
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
 ```
+
+```xml
+
+<dependencies>
+    <dependency>
+        <groupId>com.github.${{ env.GITHUB_USERNAME }}</groupId>
+        <artifactId>${{ env.ARTIFACT }}</artifactId>
+        <version>${{ env.VERSION }}</version>
+    </dependency>
+    <dependency>
+        <groupId>${{ env.GROUP }}</groupId>
+        <artifactId>${{ env.ARTIFACT }}</artifactId>
+        <version></version>
+    </dependency>
+</dependencies>
+```
+</details>
+
+<details>
+  <summary>Gradle (jitpack)</summary>
+  <details>
+    <summary>Groovy</summary>
+
+    ```groovy
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
+    
+    dependencies {
+    i   mplementation "com.github.${{ env.GITHUB_USERNAME }}:${{ env.ARTIFACT }}:${{ env.VERSION }}"
+    }
+    ```
+  </details>
+
+  <details>
+    <summary>Kotlin</summary>
+
+    ```kotlin
+    repositories {
+        maven("https://jitpack.io")
+    }
+    
+    dependencies {
+        implementation("com.github.${{ env.GITHUB_USERNAME }}:${{ env.ARTIFACT }}:${{ env.VERSION }})
+    }
+    ```
+  </details>
+
 </details>
