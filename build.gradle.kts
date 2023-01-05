@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "dev.lightdream"
-version = "0.0.12"
+version = "1.0.0"
 
 repositories {
     mavenCentral()
@@ -44,8 +44,8 @@ publishing {
     }
     repositories {
         var gitlabURL = project.findProperty("gitlab.url")
-        var gitlabHeaderName = project.findProperty("gitlab.url")
-        var gitlabHeaderValue = project.findProperty("gitlab.url")
+        var gitlabHeaderName = project.findProperty("gitlab.auth.header.name")
+        var gitlabHeaderValue = project.findProperty("gitlab.auth.header.value")
 
         if (gitlabURL == null) {
             gitlabURL = ""
