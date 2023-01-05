@@ -6,120 +6,144 @@
 <details>
   <summary>Maven</summary>
 
+  <details>
+<summary>&ensp; repo.lightdream.dev</summary>
+
   ```xml
-  <repositories>
-      <repository>
-          <id>lightdream-repo</id>
-          <url>https://repo.lightdream.dev/</url>
-      </repository>
-  </repositories>
+<repositories>
+    <repository>
+        <id>lightdream-repo</id>
+        <url>https://repo.lightdream.dev/</url>
+    </repository>
+</repositories>
   ```
-  
+
   ```xml
-  <dependencies>
-      <dependency>
-          <groupId>${{ env.GROUP }}</groupId>
-          <artifactId>${{ env.ARTIFACT }}</artifactId>
-          <version>${{ env.VERSION }}</version>
-      </dependency>
-  </dependencies>
+<dependenies>
+    <dependency>
+        <groupId>${{ env.GROUP }}</groupId>
+        <artifactId>${{ env.ARTIFACT }}</artifactId>
+        <version>${{ env.VERSION }}</version>
+    </dependency>
+</dependenies>
   ```
+
+  </details>
+  <details>
+  <summary>&ensp; jitpack.io</summary>
+
+  ```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+  ```
+
+  ```xml
+<dependencies>
+    <dependency>
+        <groupId>com.github.${{ env.GITHUB_USERNAME }}</groupId>
+        <artifactId>${{ env.ARTIFACT }}</artifactId>
+        <version>${{ env.VERSION }}</version>
+    </dependency>
+</dependencies>
+```
+
+
+
 </details>
+
+</details>
+
+<br>
 
 <details>
   <summary>Gradle</summary>
 
   <details>
-    <summary>Groovy</summary>
-
-    ```groovy
-    repositories {
-        maven { url "https://repo.lightdream.dev/" }
-    }
-    ```
-    
-    ```groovy
-    dependencies {
-        implementation "${{ env.GROUP }}:${{ env.ARTIFACT }}:${{ env.VERSION }}"
-    }
-    ```
-  </details>
+    <summary>&ensp;Groovy</summary>
 
   <details>
-    <summary>Kotlin</summary>
+<summary>&ensp;&ensp; repo.lightdream.dev</summary>
 
-    ```kotlin
-    repositories {
-        maven("https://repo.lightdream.dev/")
-    }
-    ```
-    
-    ```kotlin
-    dependencies {
-        implementation("${{ env.GROUP }}:${{ env.ARTIFACT }}:${{ env.VERSION }}")
-    }
-    ```
-  </details>
-
-</details>
-
-
-
-<details>
-  <summary>Maven (jitpack)</summary>
-
-  ```xml
-  <repositories>
-      <repository>
-          <id>jitpack.io</id>
-          <url>https://jitpack.io</url>
-      </repository>
-  </repositories>
-  ```
-  
-  ```xml
-  <dependencies>
-      <dependency>
-          <groupId>com.github.${{ env.GITHUB_USERNAME }}</groupId>
-          <artifactId>${{ env.ARTIFACT }}</artifactId>
-          <version>${{ env.VERSION }}</version>
-      </dependency>
-  </dependencies>
+```groovy
+repositories {
+    maven("https://repo.lightdream.dev/")
+}
 ```
+
+```groovy
+dependencies {
+    implementation=("${{ env.GROUP }}:${{ env.ARTIFACT }}:${{ env.VERSION }}")
+}
+```
+  </details>
+  <details>
+  <summary>&ensp;&ensp; jitpack.io</summary>
+
+```groovy
+repositories {
+    maven { url "https://jitpack.io" }
+}
+```
+
+```groovy
+dependencies {
+    implementation "com.github.${{ env.GITHUB_USERNAME }}:${{ env.ARTIFACT }}:${{ env.VERSION }}"
+}
+```
+
+
+
 </details>
 
-<details>
-  <summary>Gradle (jitpack)</summary>
-  <details>
-    <summary>Groovy</summary>
 
-    ```groovy
-    repositories {
-        maven { url "https://jitpack.io" }
-    }
-    ```
-    
-    ```groovy
-    dependencies {
-        implementation "com.github.${{ env.GITHUB_USERNAME }}:${{ env.ARTIFACT }}:${{ env.VERSION }}"
-    }
-    ```
+
   </details>
 
   <details>
-    <summary>Kotlin</summary>
+    <summary>&ensp;Kotlin</summary>
 
-    ```kotlin
-    repositories {
-        maven("https://jitpack.io")
-    }
-    ```
-    
-    ```kotlin
-    dependencies {
-        implementation("com.github.${{ env.GITHUB_USERNAME }}:${{ env.ARTIFACT }}:${{ env.VERSION }})
-    }
-    ```
+  <details>
+<summary>&ensp;&ensp; repo.lightdream.dev</summary>
+
+```groovy
+repositories {
+    maven { url "https://repo.lightdream.dev/" }
+}
+```
+
+```groovy
+dependencies {
+    implementation "${{ env.GROUP }}:${{ env.ARTIFACT }}:${{ env.VERSION }}"
+}
+```
+  </details>
+  <details>
+  <summary>&ensp;&ensp; jitpack.io</summary>
+
+```kotlin
+repositories {
+    maven("https://jitpack.io")
+}
+```
+
+```kotlin
+dependencies {
+    implementation("com.github.${{ env.GITHUB_USERNAME }}:${{ env.ARTIFACT }}:${{ env.VERSION }})
+}
+```
+
+
+
+</details>
+
   </details>
 
 </details>
+
+
+
+
