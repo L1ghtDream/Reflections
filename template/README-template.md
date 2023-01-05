@@ -3,6 +3,8 @@
 
 ## Use
 
+If you want to use an older version that is not avanible in https://repo.lightdream.dev you can try using https://archive-repo.lightdream.dev
+
 <details>
   <summary>Maven</summary><blockquote>
   <details><summary>repo.lightdream.dev</summary>
@@ -50,15 +52,6 @@
 ```
     
 </blockquote></details>
-
-  
-  
-  
-  
-  
-  
-  
-
   
 </details>
 
