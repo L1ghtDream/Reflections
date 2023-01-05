@@ -57,8 +57,6 @@
 
 </details>
 
-<br>
-
 <details>
   <summary>Gradle</summary>
 
