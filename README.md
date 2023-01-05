@@ -1,5 +1,5 @@
 ![Build](../../actions/workflows/build.yml/badge.svg)
-![Version](https://img.shields.io/badge/Version-1.0.0-red.svg)
+![Version](https://img.shields.io/badge/Version-1.1.0-red.svg)
 
 ## Use
 
@@ -23,7 +23,7 @@ If you want to use an older version that is not avanible in https://repo.lightdr
     <dependency>
         <groupId>dev.lightdream</groupId>
         <artifactId>reflections</artifactId>
-        <version>1.0.0</version>
+        <version>1.1.0</version>
     </dependency>
 </dependenies>
 ```
@@ -46,7 +46,7 @@ If you want to use an older version that is not avanible in https://repo.lightdr
     <dependency>
         <groupId>com.github.L1ghtDream</groupId>
         <artifactId>reflections</artifactId>
-        <version>1.0.0</version>
+        <version>1.1.0</version>
     </dependency>
 </dependencies>
 ```
@@ -69,7 +69,7 @@ repositories {
 
 ```groovy
 dependencies {
-    implementation "dev.lightdream:reflections:1.0.0"
+    implementation "dev.lightdream:reflections:1.1.0"
 }
 ```
   </details>
@@ -84,7 +84,7 @@ repositories {
 
 ```groovy
 dependencies {
-    implementation "com.github.L1ghtDream:reflections:1.0.0"
+    implementation "com.github.L1ghtDream:reflections:1.1.0"
 }
 ```
   </details>
@@ -104,7 +104,7 @@ repositories {
 
 ```groovy
 dependencies {
-    implementation("dev.lightdream:reflections:1.0.0")
+    implementation("dev.lightdream:reflections:1.1.0")
 }
 ```
   </details>
@@ -119,7 +119,7 @@ repositories {
 
 ```kotlin
 dependencies {
-    implementation("com.github.L1ghtDream:reflections:1.0.0")
+    implementation("com.github.L1ghtDream:reflections:1.1.0")
 }
 ```
 
