@@ -16,6 +16,10 @@ public class Mapper {
 
     private final @Getter Set<Class<?>> classes;
 
+    public Mapper(String packageName) {
+        classes = getClasses(packageName, Thread.currentThread().getContextClassLoader());
+    }
+
     public Mapper(String packageName, ClassLoader classLoader) {
         classes = getClasses(packageName, classLoader);
     }
