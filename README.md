@@ -1,5 +1,7 @@
-![Build](../../actions/workflows/build.yml/badge.svg)
-![Version](https://img.shields.io/badge/Version-1.1.1-red.svg)
+# Reflections
+
+![Build](https://github.com/L1ghtDream/Reflections/actions/workflows/build.yml/badge.svg)
+![Version](https://img.shields.io/badge/Version-1.1.2-red.svg)
 
 ## Use
 
@@ -23,13 +25,13 @@ If you want to use an older version that is not avanible in https://repo.lightdr
     <dependency>
         <groupId>dev.lightdream</groupId>
         <artifactId>reflections</artifactId>
-        <version>1.1.1</version>
+        <version>1.1.2</version>
     </dependency>
 </dependenies>
 ```
 
   </details>
-    
+
   <details><summary  style="padding-left:25px">jitpack.io</summary>
 
 ```xml
@@ -46,13 +48,13 @@ If you want to use an older version that is not avanible in https://repo.lightdr
     <dependency>
         <groupId>com.github.L1ghtDream</groupId>
         <artifactId>reflections</artifactId>
-        <version>1.1.1</version>
+        <version>1.1.2</version>
     </dependency>
 </dependencies>
 ```
-    
+
 </blockquote></details>
-  
+
 </details>
 
 <details><summary>Gradle</summary><blockquote>
@@ -69,11 +71,11 @@ repositories {
 
 ```groovy
 dependencies {
-    implementation "dev.lightdream:reflections:1.1.1"
+    implementation "dev.lightdream:reflections:1.1.2"
 }
 ```
   </details>
-    
+
   <details><summary>jitpack.io</summary>
 
 ```groovy
@@ -84,7 +86,7 @@ repositories {
 
 ```groovy
 dependencies {
-    implementation "com.github.L1ghtDream:reflections:1.1.1"
+    implementation "com.github.L1ghtDream:reflections:1.1.2"
 }
 ```
   </details>
@@ -104,7 +106,7 @@ repositories {
 
 ```groovy
 dependencies {
-    implementation("dev.lightdream:reflections:1.1.1")
+    implementation("dev.lightdream:reflections:1.1.2")
 }
 ```
   </details>
@@ -119,7 +121,7 @@ repositories {
 
 ```kotlin
 dependencies {
-    implementation("com.github.L1ghtDream:reflections:1.1.1")
+    implementation("com.github.L1ghtDream:reflections:1.1.2")
 }
 ```
 
