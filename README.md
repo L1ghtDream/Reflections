@@ -1,4 +1,4 @@
-# LightDream Reflections
+# Reflections
 
 ![Build](../../actions/workflows/build.yml/badge.svg)
 ![Version](https://img.shields.io/badge/Version-0.0.12-red.svg)
