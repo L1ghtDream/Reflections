@@ -22,7 +22,7 @@
 
 <dependencies>
     <dependency>
-        <groupId>dev.lightdream</groupId>
+        <groupId>${{ env.GROUP }}</groupId>
         <artifactId>${{ env.ARTIFACT }}</artifactId>
         <version>${{ env.VERSION }}</version>
     </dependency>
@@ -39,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    implementation "dev.lightdream:${{ env.ARTIFACT }}:${{ env.VERSION }}"
+    implementation "${{ env.GROUP }}:${{ env.ARTIFACT }}:${{ env.VERSION }}"
 }
 ```
 </details>
