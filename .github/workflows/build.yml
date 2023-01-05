@@ -21,9 +21,9 @@ jobs:
       - name: Execute Gradle build
         run: ./gradlew build
 
-      - uses: actions/labeler@v4
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: FOO
+        run: |
+          echo ${{ github.repository }}
 
       - name: Set version env variable
         run: |
