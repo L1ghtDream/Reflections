@@ -1,5 +1,3 @@
-# reflections
-
 ![Build](../../actions/workflows/build.yml/badge.svg)
 ![Version](https://img.shields.io/badge/Version-1.0.0-red.svg)
 
@@ -33,13 +31,96 @@
 <details>
   <summary>Gradle</summary>
 
-```groovy
-repositories {
-    maven { url "https://repo.lightdream.dev/" }
-}
+  <details>
+    <summary>Groovy</summary>
 
-dependencies {
-    implementation "dev.lightdream:reflections:1.0.0"
-}
+    ```groovy
+    repositories {
+        maven { url "https://repo.lightdream.dev/" }
+    }
+    
+    dependencies {
+        implementation "dev.lightdream:reflections:1.0.0"
+    }
+    ```
+  </details>
+
+  <details>
+    <summary>Kotlin</summary>
+
+    ```kotlin
+    repositories {
+        maven("https://repo.lightdream.dev/")
+    }
+    
+    dependencies {
+        implementation("dev.lightdream:reflections:1.0.0")
+    }
+    ```
+  </details>
+
+</details>
+
+
+
+<details>
+  <summary>Maven (jitpack)</summary>
+
+```xml
+
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
 ```
+
+```xml
+
+<dependencies>
+    <dependency>
+        <groupId>com.github.L1ghtDream</groupId>
+        <artifactId>reflections</artifactId>
+        <version>1.0.0</version>
+    </dependency>
+    <dependency>
+        <groupId>dev.lightdream</groupId>
+        <artifactId>reflections</artifactId>
+        <version></version>
+    </dependency>
+</dependencies>
+```
+</details>
+
+<details>
+  <summary>Gradle (jitpack)</summary>
+  <details>
+    <summary>Groovy</summary>
+
+    ```groovy
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
+    
+    dependencies {
+    i   mplementation "com.github.L1ghtDream:reflections:1.0.0"
+    }
+    ```
+  </details>
+
+  <details>
+    <summary>Kotlin</summary>
+
+    ```kotlin
+    repositories {
+        maven("https://jitpack.io")
+    }
+    
+    dependencies {
+        implementation("com.github.L1ghtDream:reflections:1.0.0)
+    }
+    ```
+  </details>
+
 </details>
