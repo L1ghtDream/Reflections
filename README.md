@@ -1,7 +1,7 @@
 # reflections
 
 ![Build](../../actions/workflows/build.yml/badge.svg)
-![Version](https://img.shields.io/badge/Version-1.0.0-red.svg)
+![Version](https://img.shields.io/badge/Version-1.0.0.1-red.svg)
 
 ## Use
 
@@ -24,7 +24,7 @@
     <dependency>
         <groupId>dev.lightdream</groupId>
         <artifactId>reflections</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.0.1</version>
     </dependency>
 </dependencies>
 ```
@@ -39,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    implementation "dev.lightdream:reflections:1.0.0"
+    implementation "dev.lightdream:reflections:1.0.0.1"
 }
 ```
 </details>
