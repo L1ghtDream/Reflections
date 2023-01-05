@@ -38,7 +38,7 @@ jobs:
           echo "https://api.github.com/users/${{ github.repository_owner }}/packages/maven/${{ env.GROUP }}.${{ env.ARTIFACT }}/versions"
           echo "https://api.github.com/users/${{ github.REPOSITORY_OWNER }}/packages/maven/${{ env.GROUP }}.${{ env.ARTIFACT }}/versions"
           echo "https://api.github.com/users/${{ env.GITHUB_REPOSITORY_OWNER }}/packages/maven/${{ env.GROUP }}.${{ env.ARTIFACT }}/versions"
-          echo "https://api.github.com/users/${{ secret.GITHUB_REPOSITORY_OWNER }}/packages/maven/${{ env.GROUP }}.${{ env.ARTIFACT }}/versions"
+          echo "https://api.github.com/users/${{ secrets.GITHUB_REPOSITORY_OWNER }}/packages/maven/${{ env.GROUP }}.${{ env.ARTIFACT }}/versions"
           echo $github_packages
           echo "\"name\": \"${{ env.VERSION }}\""
           
