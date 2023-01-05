@@ -1,4 +1,6 @@
-![Build](../../actions/workflows/build.yml/badge.svg)
+# ${{ env.REPOSITORY_NAME }}
+
+![Build](https://github.com/${{ env.REPOSITORY }}/actions/workflows/build.yml/badge.svg)
 ![Version](https://img.shields.io/badge/Version-${{ env.VERSION }}-red.svg)
 
 ## Use
@@ -29,7 +31,7 @@ If you want to use an older version that is not avanible in https://repo.lightdr
 ```
 
   </details>
-    
+
   <details><summary  style="padding-left:25px">jitpack.io</summary>
 
 ```xml
@@ -50,9 +52,9 @@ If you want to use an older version that is not avanible in https://repo.lightdr
     </dependency>
 </dependencies>
 ```
-    
+
 </blockquote></details>
-  
+
 </details>
 
 <details><summary>Gradle</summary><blockquote>
@@ -73,7 +75,7 @@ dependencies {
 }
 ```
   </details>
-    
+
   <details><summary>jitpack.io</summary>
 
 ```groovy
