@@ -29,7 +29,6 @@ jobs:
       - name: FOO
         run: |
           echo "FFFFFF"
-          mkdir ~/.m2
           touch ~/.m2/settings.xml
           echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?> <settings xsi:schemaLocation=\"http://maven.apache.org/SETTINGS/1.2.0 http://maven.apache.org/xsd/settings-1.2.0.xsd\" xmlns=\"http://maven.apache.org/SETTINGS/1.2.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"> <servers> <server> <id>github</id> <username>L1ghtDream</username> <password>${{ secrets.GITHUB_TOKEN }}</password> </server> </servers> </settings>" > ~/.m2/settings.xml
           mvn deploy:deploy-file -DgroupId=dev.lightdream -DartifactId=${{ secrets.ARTIFACT }} -Dversion=${{ secrets.VERSION }} -Dpackaging=jar -Dfile=${{ secrets.ARTIFACT }}.jar -DrepositoryId=github -Durl=https://maven.pkg.github.com/${{ github.repository }}
