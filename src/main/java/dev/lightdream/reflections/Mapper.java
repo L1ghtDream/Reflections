@@ -56,7 +56,8 @@ public class Mapper {
                     "use the Mapper<init>(Set<Class<?>>) or Mapper<init>(ReturnLambdaExecutor<Set<Class<?>>>)"
             );
             if (Debugger.isEnabled()) {
-                throwable.printStackTrace();
+                Logger.warn(throwable.getMessage());
+                //throwable.printStackTrace();
             }
         }
 
