@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "dev.lightdream"
-version = "1.2.0"
+version = "1.2.1"
 
 repositories {
     mavenCentral()
@@ -13,8 +13,8 @@ repositories {
 
 dependencies {
     //LightDream
-    implementation("dev.lightdream:logger:+")
-    implementation("dev.lightdream:lambda:+")
+    implementation("dev.lightdream:logger:3.1.0")
+    implementation("dev.lightdream:lambda:3.8.1")
 
     // ClassGraph
     implementation("io.github.classgraph:classgraph:4.8.154")
