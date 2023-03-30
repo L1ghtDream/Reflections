@@ -12,24 +12,30 @@ import java.util.HashSet;
 import java.util.Set;
 
 @SuppressWarnings("unused")
+@Deprecated
 public class Mapper {
 
+    private final @Getter String packageName;
     private final @Getter Set<Class<?>> classes;
 
     public Mapper(String packageName) {
-        classes = getClasses(packageName, Thread.currentThread().getContextClassLoader());
+        this.packageName = packageName;
+        this.classes = getClasses(packageName, Thread.currentThread().getContextClassLoader());
     }
 
     public Mapper(String packageName, ClassLoader classLoader) {
+        this.packageName = packageName;
         classes = getClasses(packageName, classLoader);
     }
 
     public Mapper(Set<Class<?>> classes) {
         this.classes = classes;
+        this.packageName = classes.toArray()[0].getClass().getPackage().getName();
     }
 
     public Mapper(ReturnLambdaExecutor<Set<Class<?>>> classesProvider) {
         this.classes = classesProvider.execute();
+        this.packageName = classes.toArray()[0].getClass().getPackage().getName();
     }
 
     private Set<Class<?>> getClasses(String packageName, ClassLoader classLoader) {
@@ -57,15 +63,16 @@ public class Mapper {
             );
             if (Debugger.isEnabled()) {
                 Logger.warn(throwable.getMessage());
-                //throwable.printStackTrace();
+                if (Debugger.isEnabled()) {
+                    throwable.printStackTrace();
+                }
             }
         }
 
         return classes;
     }
 
-    public Reflections createReflections(){
+    public Reflections createReflections() {
         return new Reflections(this);
     }
-
 }

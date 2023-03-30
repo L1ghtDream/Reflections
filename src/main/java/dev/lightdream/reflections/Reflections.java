@@ -10,6 +10,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @SuppressWarnings("unused")
+@Deprecated
 public class Reflections {
     private final @NotNull Mapper mapper;
 
@@ -22,7 +23,8 @@ public class Reflections {
      * @return A set of classes that have the specified annotation
      */
     public @NonNull Set<Class<?>> getClassesAnnotatedWith(Class<? extends Annotation> annotation) {
-        return mapper.getClasses().stream().filter(clazz -> clazz.isAnnotationPresent(annotation)).collect(Collectors.toSet());
+        return new org.reflections.Reflections(mapper.getPackageName()).getTypesAnnotatedWith(annotation);
+        //return mapper.getClasses().stream().filter(clazz -> clazz.isAnnotationPresent(annotation)).collect(Collectors.toSet());
     }
 
     /**
@@ -30,6 +32,8 @@ public class Reflections {
      * @return A set of methods that have the specified annotation
      */
     public @NonNull Set<Method> getMethodsAnnotatedWith(Class<? extends Annotation> annotation) {
+        return new org.reflections.Reflections(mapper.getPackageName()).getMethodsAnnotatedWith(annotation);
+        /*
         Set<Method> classes = new HashSet<>();
 
         mapper.getClasses().forEach(clazz -> {
@@ -41,5 +45,6 @@ public class Reflections {
         });
 
         return classes;
+        */
     }
 }
